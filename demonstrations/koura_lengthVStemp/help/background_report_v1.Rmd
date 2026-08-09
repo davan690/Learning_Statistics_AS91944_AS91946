@@ -1,0 +1,55 @@
+---
+title: Environmental Drivers of Growth and Survival in New Zealand Freshwater Crayfish (Paranephrops spp.)
+subtitle: A Review
+author: Anthony Davidson
+---
+
+# Abstract
+
+- Freshwater crayfish (kōura) are endemic to New Zealand and serve as crucial indicator species for aquatic ecosystem health. 
+
+- This review synthesizes current ecological knowledge regarding the growth, thermal tolerance, and habitat requirements of *Paranephrops planifrons* and *Paranephrops zealandicus*. 
+
+- Particular emphasis is placed on the relationship between water temperature and orbit-carapace length, providing necessary physiological context for interpreting secondary data from the New Zealand Freshwater Fish Database (NZFFD). 
+
+- While warmer temperatures increase moulting frequency and accelerate growth rates, they inversely correlate with survival.
+
+# Introduction
+
+Paranephrops is a genus of freshwater crayfish belonging to the family Parastacidae, endemic to New Zealand. There are two recognized species: the northern kōura (Paranephrops planifrons), found primarily in the North Island and northwestern South Island, and the southern kōura (Paranephrops zealandicus), distributed throughout the eastern and southern South Island.
+As a recognized taonga (treasure) and mahinga kai (traditional food source) for Māori, kōura hold significant cultural and ecological importance. Ecologically, they function as keystone scavengers and omnivores. In ecological monitoring, field data is routinely captured in the New Zealand Freshwater Fish Database (NZFFD), where kōura size is typically recorded using the Orbit-Carapace Length (OCL)—a measurement taken from directly behind the eye socket to the posterior edge of the carapace.
+
+## The Influence of Water Temperature on Growth
+
+Growth in Paranephrops spp. is closely tied to water temperature, a relationship critical for interpreting field measurements such as the minimum observed OCL. Kōura are poikilothermic, meaning their metabolic processes, including the frequency of moulting (ecdysis), are driven by ambient environmental temperatures.
+Warmer water temperatures significantly accelerate growth rates by reducing the inter-moult period. Laboratory studies have established that elevated temperatures lead to much faster physical development than is observed in feral, cold-water populations. For example, when reared in artificially heated aquaria at 18–21 °C, P. planifrons can rapidly grow to 35 mm OCL in just 18 months (Jones, 1981). In contrast, populations reared in unheated aquaria (10–21 °C) exhibited slower growth trajectories, taking between 12 and 18 months to reach a smaller baseline of 20 mm OCL (Jones, 1981).
+This rapid growth out of the juvenile stage in warmer waters provides a direct physiological mechanism for why statistical models might show a positive association between higher stream temperatures and a larger minimum observed kōura length.
+
+## Thermal Stress and Survival Trade-offs
+
+While accelerated growth occurs at higher temperatures, it comes with a severe physiological trade-off regarding survival. Elevated temperatures induce thermal stress, increase metabolic oxygen demand, and exacerbate aggressive behaviors such as cannibalism.
+In controlled rearing experiments, the mortality rates for both Paranephrops species reached as high as 60–93% at elevated growth temperatures (Jones, 1981). General ecological data collected by the National Institute of Water and Atmospheric Research (NIWA) indicates that P. zealandicus in particular is highly sensitive to thermal stress, with optimal survival occurring in water temperatures below 16 °C. Above this threshold, metabolic stress limits the population's viability.
+
+## Confounding Variables in Observational Data
+
+When analyzing observational secondary data such as the NZFFD, researchers must account for confounding ecological variables that co-vary with stream temperature:
+Catchment Land Use: Warmer streams in New Zealand are heavily correlated with pastoral land use where riparian forest canopy has been removed. Pasture streams often feature higher nutrient loads and more abundant benthic invertebrates, meaning the increased growth rates in warmer streams may be partially driven by diet abundance rather than temperature alone.
+
+Water Calcium Concentrations: Kōura rely on aqueous calcium to re-calcify their exoskeletons after a moult. A warm stream with low calcium concentrations will yield lower survival rates and impaired growth compared to a stream with optimal calcium levels (above 10 mg/L).
+
+Predator Avoidance: Small (minimum length) kōura are highly vulnerable to introduced predators such as trout. The absence of small kōura in warmer, modified habitats might be a result of predation pressure or a lack of complex habitat cover (e.g., undercut banks and woody debris), rather than a direct physiological limit caused by temperature.
+
+# Conclusion
+
+Investigating the relationship between water temperature and kōura length yields complex ecological insights. While thermal acceleration of the moult cycle (Jones, 1981) explains why warmer waters may lack smaller juvenile specimens, a robust statistical critique must acknowledge that field measurements are heavily influenced by interacting variables including land use, calcium availability, and predation.
+
+# References
+
+<!--enter bib file and proper referencing here-->
+
+Jones, J. B. (1981). Growth of two species of freshwater crayfish (Paranephrops spp.) in New Zealand. New Zealand Journal of Marine and Freshwater Research, 15(1), 15–20. https://doi.org/10.1080/00288330.1981.9515892
+Cited by: 26
+
+## Note
+
+Data regarding land use, calcium requirements, and survival thresholds below 16 °C were synthesized from National Institute of Water and Atmospheric Research [NIWA] ecological surveys and non-indexed scientific reports.)

@@ -1,0 +1,96 @@
+---
+title: "Babies Statistical Enquiry - One-Page Timed Worksheet"
+subtitle: "AS91946 (1.1) PPDAC quick version"
+author: "Student worksheet"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 10pt
+    geometry:
+      - margin=1.6cm
+    linestretch: 1.1
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhf{}
+      \lhead{Babies Enquiry}
+      \rhead{One-Page Timed}
+      \cfoot{Page \thepage}
+      \renewcommand{\headrulewidth}{0.4pt}
+      \renewcommand{\footrulewidth}{0.4pt}
+  html:
+    theme: flatly
+    toc: false
+    embed-resources: true
+---
+
+```{=latex}
+\noindent\textbf{Name:} \underline{\hspace{5.7cm}} \hfill \textbf{Class:} \underline{\hspace{2.4cm}} \hfill \textbf{Date:} \underline{\hspace{2.2cm}}
+```
+
+### Investigative Question
+
+**What is the relationship between birth weight and age of the mother?**
+
+### PPDAC Snapshot (timed)
+
+**P - Problem**
+
+1. Identify explanatory and response variables.
+```{=latex}
+\vspace{0.8cm}
+```
+
+2. State your hypothesis.
+```{=latex}
+\vspace{0.8cm}
+```
+
+**P - Plan**
+
+3. Name the main graph and two key statistics you will use.
+```{=latex}
+\vspace{0.9cm}
+```
+
+**D - Data**
+
+4. State one data limitation and one reason we cannot claim causation.
+```{=latex}
+\vspace{1.0cm}
+```
+
+**A - Analysis**
+
+5. Attach or sketch scatterplot; describe direction, form, strength, and unusual features.
+```{=latex}
+\vspace{2.0cm}
+```
+
+6. Record evidence: $r$ = ______, slope = ______, $R^2$ = ______.
+
+7. Explain slope and $R^2$ in context.
+```{=latex}
+\vspace{1.5cm}
+```
+
+8. Briefly comment on diagnostics/influential points.
+```{=latex}
+\vspace{1.0cm}
+```
+
+**C - Conclusion**
+
+9. Write a final conclusion using evidence, context, and limitations.
+```{=latex}
+\vspace{2.0cm}
+```
+
+### Quick Self-Check
+
+- [ ] I answered the exact relationship question.
+- [ ] I used both graph and numerical evidence.
+- [ ] I interpreted in context (not just copied outputs).
+- [ ] I included at least one limitation and no causal overclaim.

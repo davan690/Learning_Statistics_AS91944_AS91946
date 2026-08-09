@@ -1,0 +1,135 @@
+---
+title: "Babies Statistical Enquiry - Answer Key"
+subtitle: "AS91946 (1.1) PPDAC relationship investigation"
+author: "Teacher resource"
+date: today
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    toc: true
+    number-sections: true
+    page-layout: full
+    embed-resources: true
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - margin=2.4cm
+    linestretch: 1.25
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhf{}
+      \lhead{Babies Statistical Enquiry}
+      \rhead{Answer Key}
+      \cfoot{Page \thepage}
+      \renewcommand{\headrulewidth}{0.4pt}
+      \renewcommand{\footrulewidth}{0.4pt}
+---
+
+## Teacher Guidance
+
+This answer key is aligned to the worked example in [index.qmd](index.qmd). Accept equivalent statistical language where students show valid reasoning with evidence.
+
+::: {.callout-tip}
+For Excellence, reward responses that use statistical evidence, contextual interpretation, and critical evaluation of limitations.
+:::
+
+## Suggested High-Quality Answers by PPDAC
+
+### Problem
+
+1. Investigative question:
+   What is the relationship between birth weight and age of the mother?
+2. Variables:
+   - Explanatory: mother's age (years).
+   - Response: birth weight (grams).
+3. Why this is a relationship question:
+   Both variables are numerical, so a scatterplot/correlation/regression approach is suitable.
+4. Hypothesis (possible):
+   A weak positive relationship might exist, but with large scatter due to other factors.
+
+### Plan
+
+A strong response should include:
+
+1. Data preparation and checks.
+2. Graphs for each variable and the relationship.
+3. Correlation and fitted model.
+4. Diagnostic checking.
+5. Contextual conclusion with limitations.
+
+### Data
+
+Expected points:
+
+1. Data source is secondary (MASS birthwt).
+2. Sample size is about 189 complete records.
+3. Data is observational, so causation cannot be claimed.
+4. Sample representativeness is limited.
+
+### Analysis
+
+Expected relationship interpretation:
+
+1. Scatterplot shows slight upward trend.
+2. Pattern strength is weak due to wide vertical spread.
+3. Correlation is positive but small.
+4. Regression slope is positive.
+5. $R^2$ is small, so age explains only a small amount of variation in birth weight.
+
+Diagnostic interpretation (acceptable summary):
+
+1. Some departure from perfect normality in tails.
+2. Possible mild non-constant spread.
+3. A few influential points, but not enough to reverse overall weak-positive direction.
+
+### Conclusion
+
+Model Excellence-level conclusion:
+
+There is a weak positive relationship between mother's age and birth weight in this sample. Older mothers tend to have slightly heavier babies on average, but the relationship is weak and birth weights vary widely at all ages. Maternal age alone is not a strong predictor.
+
+Critical evaluation expected:
+
+1. Association does not imply causation.
+2. Important confounders are missing from this one-variable model (for example smoking, gestation, maternal health).
+3. Generalization beyond this sample should be cautious.
+
+Suggested improvements:
+
+1. Use multiple regression with additional explanatory variables.
+2. Compare subgroups (for example smoking/non-smoking).
+3. Use a larger, more representative sample.
+
+## Marking Indicators for Excellence
+
+Look for these indicators together, not in isolation:
+
+1. Correct and precise statistical language.
+2. Direct links between evidence and conclusion.
+3. Context-rich interpretation (not only technical output).
+4. Consideration of model limitations and data quality.
+5. Thoughtful next steps to improve inferential quality.
+
+## Achievement to Excellence Schedule
+
+Use this table to make grade boundaries explicit and consistent.
+
+| Component | Achieved | Merit | Excellence |
+|:--|:--|:--|:--|
+| Problem | States a valid relationship question and identifies variables. | Clearly defines explanatory/response roles and gives a sensible hypothesis. | Gives a contextualised and statistically justified problem framing with plausible mechanism and caveats. |
+| Plan | Lists basic methods (for example graph and model). | Chooses suitable methods and explains why they match variable types. | Plans a coherent investigation including diagnostics, influence checking, and criteria for judging strength and usefulness. |
+| Data | Uses provided data correctly. | Describes source, sample, and at least one limitation. | Critically evaluates representativeness, observational design limits, and likely confounding effects. |
+| Analysis | Produces scatterplot and basic numerical output. | Interprets direction/form/strength with evidence from graph and statistics. | Integrates multiple evidence sources (graph, r, slope, R^2, diagnostics) and evaluates robustness of the pattern. |
+| Conclusion | Answers the question in general terms. | Gives an evidence-based contextual conclusion and avoids causal claims. | Gives a nuanced conclusion with quantified evidence, limitations, and realistic, method-focused improvements. |
+| Statistical language | Uses some relevant terms correctly. | Uses key terms mostly correctly and consistently. | Uses precise statistical language fluently and purposefully throughout. |
+
+### Quick cut score guide (teacher use)
+
+1. Achieved: mostly Achieved descriptors met across all sections.
+2. Merit: mostly Merit descriptors met, with at least one section at Excellence quality.
+3. Excellence: Excellence descriptors met in nearly all sections, especially Analysis and Conclusion.

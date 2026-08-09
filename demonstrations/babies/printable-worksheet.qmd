@@ -1,0 +1,165 @@
+---
+title: "Babies Statistical Enquiry - Printable Worksheet"
+subtitle: "AS91946 (1.1) PPDAC relationship investigation"
+author: "Student worksheet"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - margin=2.3cm
+    linestretch: 1.25
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhf{}
+      \lhead{Babies Statistical Enquiry}
+      \rhead{Printable Worksheet}
+      \cfoot{Page \thepage}
+      \renewcommand{\headrulewidth}{0.4pt}
+      \renewcommand{\footrulewidth}{0.4pt}
+  html:
+    theme: flatly
+    toc: true
+    embed-resources: true
+---
+
+```{=latex}
+\noindent\textbf{Name:} \underline{\hspace{7.5cm}} \hfill \textbf{Class:} \underline{\hspace{2.8cm}}
+```
+
+## Investigative Question
+
+**What is the relationship between birth weight and age of the mother?**
+
+Use this worksheet to complete a full PPDAC enquiry at Excellence standard.
+
+## P - Problem
+
+1. Rewrite the investigative question in your own words.
+```{=latex}
+\vspace{2cm}
+```
+
+2. Identify the variables and their types.
+
+- Explanatory variable:
+```{=latex}
+\vspace{1cm}
+```
+
+- Response variable:
+```{=latex}
+\vspace{1cm}
+```
+
+3. State a sensible hypothesis before analysis.
+```{=latex}
+\vspace{2.3cm}
+```
+
+## P - Plan
+
+Describe how you will investigate the relationship.
+
+Include:
+
+1. What graphs you will use.
+2. What numerical summaries you will use.
+3. How you will decide whether the relationship is weak, moderate, or strong.
+4. How you will check if unusual values affect your conclusion.
+
+```{=latex}
+\vspace{5cm}
+```
+
+## D - Data
+
+1. Where does the data come from?
+```{=latex}
+\vspace{1.6cm}
+```
+
+2. What is your sample size after data cleaning?
+```{=latex}
+\vspace{1cm}
+```
+
+3. List two data-quality or representativeness limitations.
+```{=latex}
+\vspace{3cm}
+```
+
+## A - Analysis
+
+### Graphs and evidence
+
+1. Attach or redraw your main scatterplot of birth weight vs mother age.
+```{=latex}
+\vspace{5cm}
+```
+
+2. Describe the scatterplot using all of these words:
+
+- direction
+- form
+- strength
+- unusual features
+
+```{=latex}
+\vspace{4.5cm}
+```
+
+3. Record key numerical evidence.
+
+- Correlation ($r$): ____________________
+- Regression slope: ____________________
+- $R^2$: ____________________
+
+4. Explain what the slope means in context.
+```{=latex}
+\vspace{2.2cm}
+```
+
+5. Explain what $R^2$ means in context.
+```{=latex}
+\vspace{2.2cm}
+```
+
+### Diagnostics and influence
+
+6. What did your residual or diagnostic plots suggest about model quality?
+```{=latex}
+\vspace{3.2cm}
+```
+
+7. Did influential points change your overall conclusion? Explain.
+```{=latex}
+\vspace{2.8cm}
+```
+
+## C - Conclusion
+
+Write a final conclusion that:
+
+1. Answers the investigative question directly.
+2. Uses evidence from your graphs and model.
+3. Interprets findings in context.
+4. Critically evaluates limitations.
+5. Suggests improvements or next steps.
+
+```{=latex}
+\vspace{8cm}
+```
+
+## Excellence Checklist
+
+Tick each item when complete.
+
+- [ ] I used precise statistical language correctly.
+- [ ] I used both graph and numerical evidence.
+- [ ] I made a contextual conclusion, not just a technical one.
+- [ ] I discussed limitations and avoided causal overclaims.
+- [ ] I suggested realistic improvements to the enquiry.

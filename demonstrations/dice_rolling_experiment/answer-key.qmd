@@ -1,0 +1,64 @@
+---
+title: "Dice Rolling Experiment - Answer Key"
+subtitle: "Suggested responses for teachers"
+author: "Year 11 Statistics"
+date: today
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    toc: true
+    number-sections: true
+    page-layout: full
+    embed-resources: true
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - margin=2.4cm
+    linestretch: 1.25
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhf{}
+      \lhead{Dice Rolling Experiment}
+      \rhead{Answer Key}
+      \cfoot{Page \thepage}
+      \renewcommand{\headrulewidth}{0.4pt}
+      \renewcommand{\footrulewidth}{0.4pt}
+---
+
+## Suggested Answers
+
+::: {.callout-tip}
+These responses are intentionally flexible. Any reasonable explanation that recognises randomness and sample size should be accepted.
+:::
+
+### Part 1: Prediction
+
+1. Any face could be predicted as most common, but students should recognise there is no guaranteed winner in a fair experiment.
+2. No, the frequencies should not be exactly equal. Random variation means some faces will occur more often than others in a limited number of rolls.
+
+### Part 2: Record 20 Rolls
+
+There is no single correct answer because the student data depends on the random outcomes.
+
+### Part 3: Frequency Table
+
+For a fair die, each face has theoretical probability $\frac{1}{6}$, or about $0.167$.
+
+### Part 4: Compare Results
+
+1. The highest experimental frequency is whichever face has the largest count in the student data.
+2. The lowest experimental frequency is whichever face has the smallest count in the student data.
+3. The experimental probabilities are usually not exactly the same as the theoretical probabilities because the sample is finite and randomness causes variation.
+
+### Part 5: Reflection
+
+As the number of rolls increases, the experimental probability should usually get closer to $\frac{1}{6}$, but it will still vary a little. This is an example of the law of large numbers.
+
+### Extension
+
+With more rolls, the counts tend to become more stable and the bar chart usually looks more balanced, although some variation always remains.

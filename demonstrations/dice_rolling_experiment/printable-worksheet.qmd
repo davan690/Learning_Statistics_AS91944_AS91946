@@ -1,0 +1,110 @@
+---
+title: "Dice Rolling Experiment - Printable Worksheet"
+subtitle: "Student worksheet without the interactive simulator"
+author: "Year 11 Statistics"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - margin=2.3cm
+    linestretch: 1.25
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhf{}
+      \lhead{Dice Rolling Experiment}
+      \rhead{Printable Worksheet}
+      \cfoot{Page \thepage}
+      \renewcommand{\headrulewidth}{0.4pt}
+      \renewcommand{\footrulewidth}{0.4pt}
+  html:
+    theme: flatly
+    toc: true
+    embed-resources: true
+---
+
+```{=latex}
+\noindent\textbf{Name:} \underline{\hspace{7.5cm}} \hfill \textbf{Class:} \underline{\hspace{2.8cm}}
+```
+
+## Purpose
+
+Use a fair six-sided die to investigate chance behaviour. Complete the tasks below after making observations from a class simulator, physical die, or other approved random experiment.
+
+## Part 1: Prediction
+
+Before you start, answer the following questions.
+
+1. Which face do you think will appear most often after many rolls?
+```{=latex}
+\vspace{1.8cm}
+```
+
+2. Do you think the frequencies will be exactly equal? Explain why or why not.
+```{=latex}
+\vspace{2.5cm}
+```
+
+## Part 2: Record 20 Rolls
+
+Record 20 rolls in the table below.
+
+| Roll number | Result | Roll number | Result | Roll number | Result | Roll number | Result |
+|:--|:--|:--|:--|:--|:--|:--|:--|
+| 1 | ______ | 6 | ______ | 11 | ______ | 16 | ______ |
+| 2 | ______ | 7 | ______ | 12 | ______ | 17 | ______ |
+| 3 | ______ | 8 | ______ | 13 | ______ | 18 | ______ |
+| 4 | ______ | 9 | ______ | 14 | ______ | 19 | ______ |
+| 5 | ______ | 10 | ______ | 15 | ______ | 20 | ______ |
+
+## Part 3: Frequency Table
+
+After 20 rolls, complete the summary table.
+
+| Face | Count | Experimental probability |
+|:--|:--|:--|
+| 1 | ______ | ______ |
+| 2 | ______ | ______ |
+| 3 | ______ | ______ |
+| 4 | ______ | ______ |
+| 5 | ______ | ______ |
+| 6 | ______ | ______ |
+
+Write the theoretical probability for each face of a fair die.
+```{=latex}
+\vspace{2.2cm}
+```
+
+## Part 4: Compare Results
+
+1. Which face had the highest experimental frequency?
+```{=latex}
+\vspace{1.8cm}
+```
+
+2. Which face had the lowest experimental frequency?
+```{=latex}
+\vspace{1.8cm}
+```
+
+3. Were the results exactly the same as the theoretical probabilities? Explain why this happens.
+```{=latex}
+\vspace{3cm}
+```
+
+## Part 5: Reflection
+
+How does the number of rolls affect how close the experimental probability gets to the theoretical probability of $\frac{1}{6}$?
+```{=latex}
+\vspace{4cm}
+```
+
+## Extension
+
+Try 50 or 100 rolls and look for a pattern. Describe what happens to the bars or counts as the number of trials increases.
+```{=latex}
+\vspace{3cm}
+```

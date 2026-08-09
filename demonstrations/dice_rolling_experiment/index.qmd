@@ -1,0 +1,487 @@
+---
+title: "Dice Rolling Experiment"
+subtitle: "Interactive simulator and worksheet"
+author: "Year 11 Statistics"
+date: today
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    toc: true
+    number-sections: true
+    page-layout: full
+    embed-resources: true
+    code-fold: false
+---
+
+<style>
+:root {
+  --ink: #1f2937;
+  --muted: #5b6472;
+  --panel: rgba(255, 255, 255, 0.94);
+  --panel-border: rgba(31, 41, 55, 0.12);
+  --accent: #0f766e;
+  --accent-2: #b45309;
+  --soft: #f4f7fb;
+  --soft-2: #edf7f5;
+}
+
+body {
+  color: var(--ink);
+}
+
+.hero {
+  background:
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.22), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(180, 83, 9, 0.18), transparent 28%),
+    linear-gradient(135deg, #f8fbff 0%, #eef5f3 100%);
+  border: 1px solid var(--panel-border);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+  margin: 1rem 0 1.5rem 0;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.hero p {
+  margin: 0.45rem 0 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.sim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sim-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.sim-card h3 {
+  margin-top: 0;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.dice-button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15, 118, 110, 0.22);
+}
+
+.dice-button.secondary {
+  background: var(--accent-2);
+  box-shadow: 0 10px 22px rgba(180, 83, 9, 0.18);
+}
+
+.dice-button.ghost {
+  background: #e2e8f0;
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.dice-readout {
+  display: grid;
+  place-items: center;
+  min-height: 8rem;
+  border: 2px dashed rgba(15, 118, 110, 0.25);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.freq-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+}
+
+.freq-table th,
+.freq-table td {
+  border: 1px solid rgba(31, 41, 55, 0.12);
+  padding: 0.55rem 0.6rem;
+  text-align: center;
+}
+
+.freq-table th {
+  background: var(--soft);
+}
+
+.bar-track {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.55rem;
+  min-height: 220px;
+  padding: 1rem 0.25rem 0.3rem 0.25rem;
+}
+
+.bar-item {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bar {
+  width: 100%;
+  max-width: 64px;
+  min-height: 8px;
+  border-radius: 0.75rem 0.75rem 0.2rem 0.2rem;
+  background: linear-gradient(180deg, #34d399 0%, #0f766e 100%);
+  box-shadow: 0 12px 25px rgba(15, 118, 110, 0.18);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  padding-top: 0.35rem;
+}
+
+.roll-log {
+  max-height: 260px;
+  overflow: auto;
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.answer-box {
+  width: 100%;
+  min-height: 4.5rem;
+  border: 1px solid rgba(31, 41, 55, 0.18);
+  border-radius: 0.8rem;
+  background: white;
+  padding: 0.75rem 0.9rem;
+  resize: vertical;
+}
+
+.answer-line {
+  display: inline-block;
+  min-width: 13rem;
+  border-bottom: 2px solid rgba(31, 41, 55, 0.45);
+  transform: translateY(-0.1rem);
+}
+
+details.teacher-note {
+  border: 1px solid rgba(31, 41, 55, 0.12);
+  border-radius: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: #fcfcfd;
+}
+
+.worksheet-band {
+  background: #ffffff;
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+  margin: 1rem 0;
+}
+
+@media print {
+  .button-row,
+  .sim-card button,
+  .dice-button {
+    display: none !important;
+  }
+
+  .hero,
+  .sim-card,
+  .worksheet-band {
+    box-shadow: none;
+  }
+}
+</style>
+
+```{=html}
+<div class="hero">
+  <h1>Dice Rolling Experiment</h1>
+  <p>Use the simulator to run repeated trials, then answer the worksheet questions using the results you collect.</p>
+</div>
+```
+
+::: {.callout-tip}
+### How to use this page
+
+1. Make a prediction before you start.
+2. Use the simulator to roll a fair six-sided die.
+3. Record what happens after 20, 50, or 100 trials.
+4. Compare your experimental results with the theoretical probability of each face.
+5. Explain whether the results get closer to the expected values as the number of rolls increases.
+:::
+
+## 1. Interactive Simulator
+
+```{=html}
+<div id="dice-simulator" class="sim-grid" aria-label="Dice rolling simulator">
+  <div class="sim-card">
+    <h3>Roll the die</h3>
+    <p class="muted">Each roll is one trial of a fair six-sided die.</p>
+    <div id="current-roll" class="dice-readout">-</div>
+    <div class="button-row">
+      <button class="dice-button" type="button" data-roll="1">Roll 1</button>
+      <button class="dice-button" type="button" data-roll="10">Roll 10</button>
+      <button class="dice-button secondary" type="button" data-roll="50">Roll 50</button>
+      <button class="dice-button ghost" type="button" data-action="reset">Reset</button>
+    </div>
+    <p id="roll-summary" class="muted" style="margin-top:0.9rem;margin-bottom:0;">0 rolls completed.</p>
+  </div>
+
+  <div class="sim-card">
+    <h3>Frequency table</h3>
+    <p class="muted">Use this table to compare counts and experimental probability.</p>
+    <table class="freq-table">
+      <thead>
+        <tr>
+          <th>Face</th>
+          <th>Count</th>
+          <th>Experimental probability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td id="count-1">0</td><td id="prob-1">0.000</td></tr>
+        <tr><td>2</td><td id="count-2">0</td><td id="prob-2">0.000</td></tr>
+        <tr><td>3</td><td id="count-3">0</td><td id="prob-3">0.000</td></tr>
+        <tr><td>4</td><td id="count-4">0</td><td id="prob-4">0.000</td></tr>
+        <tr><td>5</td><td id="count-5">0</td><td id="prob-5">0.000</td></tr>
+        <tr><td>6</td><td id="count-6">0</td><td id="prob-6">0.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sim-card">
+    <h3>Visual display</h3>
+    <p class="muted">The bar chart updates after each set of rolls.</p>
+    <div id="bar-chart" class="bar-track" aria-label="Dice outcome frequency chart"></div>
+  </div>
+
+  <div class="sim-card">
+    <h3>Roll log</h3>
+    <p class="muted">The most recent results appear at the top of the list.</p>
+    <ol id="roll-log" class="roll-log"></ol>
+  </div>
+</div>
+```
+
+```{=html}
+<script>
+(function () {
+  const faces = [1, 2, 3, 4, 5, 6];
+  const state = {
+    rolls: [],
+    lastRoll: null
+  };
+
+  const currentRoll = document.getElementById('current-roll');
+  const rollSummary = document.getElementById('roll-summary');
+  const rollLog = document.getElementById('roll-log');
+  const barChart = document.getElementById('bar-chart');
+  const buttons = document.querySelectorAll('#dice-simulator button');
+
+  function rollDie() {
+    return Math.floor(Math.random() * 6) + 1;
+  }
+
+  function getCounts() {
+    const counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+    state.rolls.forEach((value) => {
+      counts[value] += 1;
+    });
+    return counts;
+  }
+
+  function render() {
+    const totalRolls = state.rolls.length;
+    const counts = getCounts();
+
+    currentRoll.textContent = state.lastRoll === null ? '-' : state.lastRoll;
+    rollSummary.textContent = totalRolls + ' rolls completed.';
+
+    faces.forEach((face) => {
+      const count = counts[face];
+      const probability = totalRolls === 0 ? 0 : count / totalRolls;
+
+      document.getElementById('count-' + face).textContent = String(count);
+      document.getElementById('prob-' + face).textContent = probability.toFixed(3);
+    });
+
+    rollLog.innerHTML = '';
+    state.rolls.slice().reverse().forEach((value, index) => {
+      const item = document.createElement('li');
+      item.textContent = 'Roll ' + (totalRolls - index) + ': ' + value;
+      rollLog.appendChild(item);
+    });
+
+    barChart.innerHTML = '';
+    const highestCount = Math.max(1, ...faces.map((face) => counts[face]));
+
+    faces.forEach((face) => {
+      const item = document.createElement('div');
+      item.className = 'bar-item';
+
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.style.height = Math.max(8, Math.round((counts[face] / highestCount) * 180)) + 'px';
+      bar.textContent = counts[face];
+
+      const label = document.createElement('div');
+      label.innerHTML = '<strong>' + face + '</strong>';
+
+      item.appendChild(bar);
+      item.appendChild(label);
+      barChart.appendChild(item);
+    });
+  }
+
+  function addRolls(numberOfRolls) {
+    for (let index = 0; index < numberOfRolls; index += 1) {
+      const result = rollDie();
+      state.rolls.push(result);
+      state.lastRoll = result;
+    }
+    render();
+  }
+
+  function resetSimulator() {
+    state.rolls = [];
+    state.lastRoll = null;
+    render();
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const rollCount = button.getAttribute('data-roll');
+      const action = button.getAttribute('data-action');
+
+      if (rollCount) {
+        addRolls(Number(rollCount));
+      }
+
+      if (action === 'reset') {
+        resetSimulator();
+      }
+    });
+  });
+
+  render();
+})();
+</script>
+```
+
+## 2. Worksheet Tasks
+
+::: {.worksheet-band}
+### Task 1: Prediction
+
+Before you use the simulator, make a prediction about what you expect to happen.
+
+* Which face do you think will appear most often after many rolls?
+* Do you think the frequencies will be exactly equal? Why or why not?
+
+<textarea class="answer-box" aria-label="Prediction answer"></textarea>
+:::
+
+::: {.worksheet-band}
+### Task 2: Record 20 Rolls
+
+Use the simulator to complete at least 20 rolls.
+
+Record your results in the table below.
+
+| Roll number | Result | Roll number | Result | Roll number | Result | Roll number | Result |
+|:--|:--|:--|:--|:--|:--|:--|:--|
+| 1 | <span class="answer-line"></span> | 6 | <span class="answer-line"></span> | 11 | <span class="answer-line"></span> | 16 | <span class="answer-line"></span> |
+| 2 | <span class="answer-line"></span> | 7 | <span class="answer-line"></span> | 12 | <span class="answer-line"></span> | 17 | <span class="answer-line"></span> |
+| 3 | <span class="answer-line"></span> | 8 | <span class="answer-line"></span> | 13 | <span class="answer-line"></span> | 18 | <span class="answer-line"></span> |
+| 4 | <span class="answer-line"></span> | 9 | <span class="answer-line"></span> | 14 | <span class="answer-line"></span> | 19 | <span class="answer-line"></span> |
+| 5 | <span class="answer-line"></span> | 10 | <span class="answer-line"></span> | 15 | <span class="answer-line"></span> | 20 | <span class="answer-line"></span> |
+:::
+
+::: {.worksheet-band}
+### Task 3: Frequency and Probability
+
+After 20 rolls, complete the summary table.
+
+| Face | Count | Experimental probability |
+|:--|:--|:--|
+| 1 | <span class="answer-line"></span> | <span class="answer-line"></span> |
+| 2 | <span class="answer-line"></span> | <span class="answer-line"></span> |
+| 3 | <span class="answer-line"></span> | <span class="answer-line"></span> |
+| 4 | <span class="answer-line"></span> | <span class="answer-line"></span> |
+| 5 | <span class="answer-line"></span> | <span class="answer-line"></span> |
+| 6 | <span class="answer-line"></span> | <span class="answer-line"></span> |
+
+Write the theoretical probability for each face of a fair die.
+
+<textarea class="answer-box" aria-label="Theoretical probability answer"></textarea>
+:::
+
+::: {.worksheet-band}
+### Task 4: Compare Experimental and Theoretical Results
+
+1. Which face had the highest experimental frequency?
+2. Which face had the lowest experimental frequency?
+3. Were the results exactly the same as the theoretical probabilities? Explain why this happens.
+
+<textarea class="answer-box" aria-label="Comparison answer"></textarea>
+:::
+
+::: {.worksheet-band}
+### Task 5: Reflection
+
+Use full sentences to answer the final question.
+
+How does the number of rolls affect how close the experimental probability gets to the theoretical probability of $\frac{1}{6}$?
+
+<textarea class="answer-box" aria-label="Reflection answer"></textarea>
+:::
+
+## 3. Extension
+
+Try 50 or 100 rolls and look for a pattern.
+
+* Do the bars in the chart become more even or less even?
+* Does one face stay dominant, or do the frequencies begin to balance out?
+* What does this tell you about randomness and sample size?
+
+::: {.callout-note}
+### Teacher note
+
+This page is designed so students can investigate chance behaviour without leaving the document.
+
+Related files:
+
+- [Printer-friendly PDF worksheet](printable-worksheet.qmd)
+- [Answer key](answer-key.qmd)
+:::
