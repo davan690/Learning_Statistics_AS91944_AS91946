@@ -37,6 +37,12 @@ source("setup.R")
 
 ### Render (HTML + PDF)
 
+```powershell
+.\render.ps1
+```
+
+Or, if `quarto` is already on your PATH:
+
 ```bash
 quarto render
 ```
@@ -44,20 +50,53 @@ quarto render
 The output is written to the `_book/` directory. Open `_book/index.html` in
 any browser to read the HTML version.
 
+`render.ps1` locates `quarto.exe` itself (falling back to common install
+paths) so rendering still works in a PowerShell session where PATH hasn't
+picked up a recent Quarto install — see [Troubleshooting](#troubleshooting).
+
 ### Render HTML only
 
-```bash
-quarto render --to html
+```powershell
+.\render.ps1 -To html
 ```
 
 ### Render PDF only
 
-```bash
-quarto render --to pdf
+```powershell
+.\render.ps1 -To pdf
 ```
 
 > PDF rendering requires a LaTeX installation. We recommend
 > [TinyTeX](https://yihui.org/tinytex/): `quarto install tinytex`
+
+## Troubleshooting
+
+**`quarto : The term 'quarto' is not recognized...`**
+
+This happens when a PowerShell/terminal session was started before Quarto was
+installed or added to PATH — Windows does not push environment variable
+changes to already-running shells. Fixes, in order of preference:
+
+1. Open a new terminal (PATH is re-read on session start).
+2. Use `.\render.ps1`, which resolves `quarto.exe` directly instead of relying
+   on PATH.
+3. Call the executable by its full path, e.g.
+   `& "$env:LOCALAPPDATA\Programs\Quarto\bin\quarto.exe" render`.
+
+**`render.ps1 cannot be loaded because running scripts is disabled...`**
+
+PowerShell's default execution policy blocks local `.ps1` scripts. Either run
+it once per session with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\render.ps1
+```
+
+or allow local scripts permanently (per-user, no admin required):
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
 
 ## Repository structure
 
