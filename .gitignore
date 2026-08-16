@@ -20,6 +20,7 @@
 
 # RStudio files
 .Rproj.user/
+babies.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -58,3 +59,6 @@ rsconnect/
 
 /.quarto/
 **/*.quarto_ipynb
+
+#local render file
+render.ps1
